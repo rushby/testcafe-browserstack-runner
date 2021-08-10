@@ -93,9 +93,7 @@ const stopBrowserStackLocal = (bs: any): Promise<void> =>
 	const results = await Promise.all(actions);
 
 	let numberOfFailures = 0;
-	for(let n = 0; n <= results.length; n++){
-		numberOfFailures += results[0];
-	}
+	results.forEach(result => numberOfFailures += result);
 
 	await stopBrowserStackLocal(browserstack);
 
