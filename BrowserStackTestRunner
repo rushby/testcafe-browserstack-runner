@@ -21,7 +21,7 @@ const createTestCafeInstance = async (
 		.browsers(browser)
 		.run({ skipJsErrors: !!process.env.SKIP_JS_ERRORS });
 
-	console.log(`Tests failed: ${failures}`);
+	console.log(`Tests failed for ${JSON.stringify(browser)}: ${failures}`);
 
 	await tc.close();
 	return failures;
